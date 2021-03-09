@@ -42,7 +42,7 @@ form {
 #ip-address {
 	padding: 15px 0;
 	width: 100%;
-	cursor: text;
+	cursor: pointer;
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
 }
@@ -85,7 +85,7 @@ form {
 	justify-content: space-around;
 	align-items: center;
 	background-color: #fff;
-	padding: 40px 0;
+	padding: 40px 10px;
 }
 
 .display-details div span {
