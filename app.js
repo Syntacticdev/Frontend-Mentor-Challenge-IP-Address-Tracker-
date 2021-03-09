@@ -57,6 +57,7 @@ function loadMap(res){
 }
 
 form.addEventListener('submit', searchIp)
+form.addEventListener('keyup', searchIp)
 
 async function searchIp(e){
 	e.preventDefault()
