@@ -62,7 +62,10 @@ form.addEventListener('keyup', searchIp)
 async function searchIp(e){
 	e.preventDefault()
 	document.querySelector('.status').innerText = 'SEARCHING FOR IP'
-	ip_address.innerText = "searching..."
+	ip_address.innerText = '...'
+	user_location.innerText = '...'
+	user_timezone.innerText = '...'
+	isp_location.innerText = '...'
 	let searched_ip_value = document.querySelector('#ip-address').value
 	if(!searched_ip_value == null || !searched_ip_value == '' || !searched_ip_value == undefined || !searched_ip_value.length < 8){
 		map.remove()
