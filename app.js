@@ -1,5 +1,9 @@
 const mapcontainer = document.querySelector('.map');
 const form = document.querySelector('form');
+const ip_address = document.querySelector('.ip');
+const user_location = document.querySelector('.location');
+const user_timezone = document.querySelector('.timezone');
+const isp_location = document.querySelector('.isp');
 let status = document.querySelector('.status');
 let http = new XMLHttpRequest()
 import apiKey from './keys.js';
@@ -14,7 +18,6 @@ document.addEventListener('DOMContentLoaded',async ()=>{
 })
 
 async function callApi(ip){
-	loading = true
 	const request = await fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ip}`)
 	const response = await request.json()
 	loadMap(response)
@@ -22,17 +25,14 @@ async function callApi(ip){
 }
 
 function updateLayers(response) {
-	loading = true
-	const ip_address = document.querySelector('.ip');
-	const user_location = document.querySelector('.location');
-	const user_timezone = document.querySelector('.timezone');
-	const isp_location = document.querySelector('.isp');
+
 	const{ ip, isp, location: {country, region, city, timezone},} = response
 
 	ip_address.innerText = ip
 	user_location.innerText = `${country}, ${region}, ${city}`
 	user_timezone.innerText = `UTC-${timezone}`
 	isp_location.innerText = isp
+	document.querySelector('.status').innerText = 'FOUND'
 		
 }
 
@@ -61,13 +61,12 @@ form.addEventListener('keyup', searchIp)
 
 async function searchIp(e){
 	e.preventDefault()
-	loading = true
-	
+	document.querySelector('.status').innerText = 'SEARCHING FOR IP'
+	ip_address.innerText = "searching..."
 	let searched_ip_value = document.querySelector('#ip-address').value
 	if(!searched_ip_value == null || !searched_ip_value == '' || !searched_ip_value == undefined || !searched_ip_value.length < 8){
 		map.remove()
 		callApi(searched_ip_value)
-		loading = false
 	} else {
 		map.remove()
 		callApi(direct_ip)
