@@ -70,6 +70,7 @@ form {
 
 .status {
 	text-align: center;
+	animation: loading .5s infinite;
 }
 
 .board {
@@ -111,6 +112,17 @@ form {
 	height: 400px;
 }
 
+.attribution { font-size: 11px;
+	text-align: center;
+	padding: 20px; 
+	color: #fff; 
+	font-size: 15px; 
+}
+.attribution a { 
+	
+	color: hsl(228, 29%, 87%);
+}
+
 footer {
 	background-color: rgb(3, 17, 12)
 }
@@ -150,5 +162,18 @@ footer {
 	}
 	.divider {
 		display: none;
+	}
+}
+
+@keyframes loading {
+	0%{
+		opacity: 0;
+	}
+	50% {
+		opacity: .7;
+	}
+
+	100% {
+		opacity:  1;
 	}
 }

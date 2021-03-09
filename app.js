@@ -33,7 +33,7 @@ function updateLayers(response) {
 	user_timezone.innerText = `UTC-${timezone}`
 	isp_location.innerText = isp
 	document.querySelector('.status').innerText = 'FOUND'
-		
+	document.querySelector('.status').style.animation = 'none'
 }
 
 const icon = L.icon({
