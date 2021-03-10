@@ -18,6 +18,7 @@ body {
 header {
 	background:  url('./images/pattern-bg.png');
 	background-repeat: no-repeat;
+	background-size: cover;
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -35,9 +36,13 @@ header {
 	align-items: center;
 }
 
-.search-board  + h4 {
-	padding-top: 10px;
+.search-board {
+	margin-top: 10px;
+}
+
+.search-board + h4 {
 	text-align: center;
+	padding: 10px;
 }
 
 form {
@@ -75,10 +80,8 @@ form {
 }
 
 .status {
-	padding: 40px 0 0 5px ;
-	animation-name: loading;
-	animation-duration: .5s;
-	animation-iteration-count: infinite;
+	padding: 40px 0 0 0 ;
+	animation: loading .5s infinite;
 }
 
 .board {
@@ -108,9 +111,7 @@ form {
 
 .display-details div h4 {
 	font-size: 20px;
-	animation-name: loading;
-	animation-duration: .5s;
-	animation-iteration-count: infinite;
+	animation: loading .5s infinite;
 }
 
 .divider {
