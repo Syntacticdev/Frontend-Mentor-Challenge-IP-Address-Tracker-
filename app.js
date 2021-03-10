@@ -31,7 +31,7 @@ function updateLayers(response) {
 
 	ip_address.innerText = ip
 	user_location.innerText = `${country}, ${region}, ${city}`
-	user_timezone.innerText = `UTC-${timezone}`
+	user_timezone.innerText = `UTC${timezone}`
 	isp_location.innerText = isp
 	status.innerText = 'FOUND'
 	status.style.animation = 'none'
