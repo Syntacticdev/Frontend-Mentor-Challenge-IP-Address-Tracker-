@@ -36,7 +36,7 @@ header {
 }
 
 .search-board  + h4 {
-	padding-top: 100px;
+	padding-top: 10px;
 	text-align: center;
 }
 
@@ -75,7 +75,7 @@ form {
 }
 
 .status {
-	padding: 40px 0 0 0 ;
+	padding: 40px 0 0 5px ;
 	animation-name: loading;
 	animation-duration: .5s;
 	animation-iteration-count: infinite;
