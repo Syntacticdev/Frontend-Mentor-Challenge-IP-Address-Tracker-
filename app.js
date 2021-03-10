@@ -67,7 +67,6 @@ async function searchIp(e){
 	user_location.innerText = '...'
 	user_timezone.innerText = '...'
 	isp_location.innerText = '...'
-	h4.forEach(el=> {el.style.animation = 'loading'})
 	let searched_ip_value = document.querySelector('#ip-address').value
 	if(!searched_ip_value == null || !searched_ip_value == '' || !searched_ip_value == undefined || !searched_ip_value.length < 8){
 		map.remove()
