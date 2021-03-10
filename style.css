@@ -106,7 +106,12 @@ form {
 	font-weight: 800;
 }
 
-
+.display-details div h4 {
+	font-size: 20px;
+	animation-name: loading;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
+}
 
 .divider {
 	height: 50px;

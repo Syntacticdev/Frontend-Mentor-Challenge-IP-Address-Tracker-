@@ -6,6 +6,7 @@ const user_location = document.querySelector('.location');
 const user_timezone = document.querySelector('.timezone');
 const isp_location = document.querySelector('.isp');
 let status = document.querySelector('.status');
+let h4 = document.querySelectorAll('.display-details div h4')
 import apiKey from './keys.js';
 let direct_ip;
 let map;
@@ -34,6 +35,7 @@ function updateLayers(response) {
 	isp_location.innerText = isp
 	status.innerText = 'FOUND'
 	status.style.animation = 'none'
+	h4.forEach(el=> {el.style.animation = 'none'})
 }
 
 const icon = L.icon({
