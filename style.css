@@ -76,7 +76,9 @@ form {
 
 .status {
 	padding: 40px 0 0 0 ;
-	animation: loading .5s infinite;
+	animation-name: loading;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
 }
 
 .board {
@@ -106,7 +108,9 @@ form {
 
 .display-details div h4 {
 	font-size: 20px;
-	animation: loading .5s infinite;
+	animation-name: loading;
+	animation-duration: .5s;
+	animation-iteration-count: infinite;
 }
 
 .divider {
