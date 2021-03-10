@@ -1,3 +1,4 @@
+
 const mapcontainer = document.querySelector('.map');
 const form = document.querySelector('form');
 const ip_address = document.querySelector('.ip');
@@ -5,7 +6,7 @@ const user_location = document.querySelector('.location');
 const user_timezone = document.querySelector('.timezone');
 const isp_location = document.querySelector('.isp');
 let status = document.querySelector('.status');
-let http = new XMLHttpRequest()
+let h4 = document.querySelectorAll('.display-details div h4')
 import apiKey from './keys.js';
 let direct_ip;
 let map;
@@ -18,7 +19,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
 })
 
 async function callApi(ip){
-	const request = await fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${ip}`)
+	const request = await fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${direct_ip}`)
 	const response = await request.json()
 	loadMap(response)
 	updateLayers(response)
@@ -32,8 +33,9 @@ function updateLayers(response) {
 	user_location.innerText = `${country}, ${region}, ${city}`
 	user_timezone.innerText = `UTC-${timezone}`
 	isp_location.innerText = isp
-	document.querySelector('.status').innerText = 'FOUND'
-	document.querySelector('.status').style.animation = 'none'
+	status.innerText = 'FOUND'
+	status.style.animation = 'none'
+	h4.forEach(el=> {el.style.animation = 'none'})
 }
 
 const icon = L.icon({
@@ -56,8 +58,7 @@ function loadMap(res){
 	L.marker([lat, lng], {icon}).addTo(map)
 }
 
-form.addEventListener('submit', searchIp)
-form.addEventListener('keyup', searchIp)
+form.addEventListener('submit', searchIp);
 
 async function searchIp(e){
 	e.preventDefault()
@@ -66,6 +67,7 @@ async function searchIp(e){
 	user_location.innerText = '...'
 	user_timezone.innerText = '...'
 	isp_location.innerText = '...'
+	h4.forEach(el=> {el.style.animation = 'loading'})
 	let searched_ip_value = document.querySelector('#ip-address').value
 	if(!searched_ip_value == null || !searched_ip_value == '' || !searched_ip_value == undefined || !searched_ip_value.length < 8){
 		map.remove()

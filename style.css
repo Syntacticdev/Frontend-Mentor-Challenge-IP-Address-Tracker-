@@ -17,6 +17,7 @@ body {
 
 header {
 	background:  url('./images/pattern-bg.png');
+	background-repeat: no-repeat;
 	color: #fff;
 	display: flex;
 	justify-content: center;
@@ -32,6 +33,11 @@ header {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.search-board  + h4 {
+	padding-top: 100px;
+	text-align: center;
 }
 
 form {
@@ -69,7 +75,7 @@ form {
 }
 
 .status {
-	text-align: center;
+	padding: 40px 0 0 0 ;
 	animation: loading .5s infinite;
 }
 
@@ -100,6 +106,7 @@ form {
 
 .display-details div h4 {
 	font-size: 20px;
+	animation: loading .5s infinite;
 }
 
 .divider {

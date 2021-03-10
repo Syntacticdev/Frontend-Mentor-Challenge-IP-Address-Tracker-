@@ -8,15 +8,9 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <script type="module" src="./app.js" defer ></script>
-  <link rel="stylesheet" type="text/css" href="./style.css">
-  
+  <link rel="stylesheet" type="text/css" href="./style.css">  
   <title>Frontend Mentor | IP Address Tracker</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; padding: 20px; color: #fff; font-size: 15px; }
-    .attribution a { color: hsl(228, 29%, 87%); }
-  </style>
 </head>
 <body>
 
@@ -25,8 +19,8 @@
 
         <div class="search-board">
             <form>
-                <input type="text" name="ip-address" id="ip-address" placeholder=" Search for any IP address or domain" minlength="7">
-                <button type="submit" id="search-location-btn"><img src="./images/icon-arrow.svg" disabled></button>
+                <input type="text" name="ip-address" id="ip-address" aria-label="ip-address-input" ari name="ip-address-input" placeholder=" Search for any IP address or domain" minlength="7">
+                <button type="submit" name="submit" id="search-location-btn"><img src="./images/icon-arrow.svg" alt="icon-arrow"></button>
             </form>
           </div>
           <h4>STATUS: <span class="status">DETECTING CLIENT IP</span></h4>
