@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
 })
 
 async function callApi(ip){
-	const request = await fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${direct_ip}`)
+	const request = await fetch(`https://geo.ipify.org/api/v1?apiKey=${process.env.MY_API}&ipAddress=${direct_ip}`)
 	const response = await request.json()
 	loadMap(response)
 	updateLayers(response)
