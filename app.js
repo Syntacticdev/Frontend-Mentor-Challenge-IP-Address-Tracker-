@@ -1,6 +1,4 @@
-import env from 'dotenv'
 
-env.config()
 const mapcontainer = document.querySelector('.map');
 const form = document.querySelector('form');
 const ip_address = document.querySelector('.ip');
@@ -21,7 +19,7 @@ document.addEventListener('DOMContentLoaded',async ()=>{
 })
 
 async function callApi(ip){
-	const request = await fetch(`https://geo.ipify.org/api/v1?apiKey=${process.env.MY_API}&ipAddress=${direct_ip}`)
+	const request = await fetch(`https://geo.ipify.org/api/v1?apiKey=${apiKey}&ipAddress=${direct_ip}`)
 	const response = await request.json()
 	loadMap(response)
 	updateLayers(response)
