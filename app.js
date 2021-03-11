@@ -1,4 +1,6 @@
+import env from 'dotenv'
 
+env.config()
 const mapcontainer = document.querySelector('.map');
 const form = document.querySelector('form');
 const ip_address = document.querySelector('.ip');
